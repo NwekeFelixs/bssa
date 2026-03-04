@@ -1,0 +1,636 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BBSA Programs Overview | Buckeye Blazers Soccer Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec1313",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221010",
+              "gray-custom": "#333333",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-gray-custom dark:text-white transition-colors duration-300"
+  >
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+      <div
+        id="menu-overlay"
+        class="fixed inset-0 bg-black/60 z-[60] hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"
+      ></div>
+      <aside
+        id="side-menu"
+        class="fixed top-0 right-0 w-[80%] max-w-sm h-full bg-white dark:bg-background-dark z-[70] translate-x-full shadow-2xl p-6 flex flex-col"
+      >
+        <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center gap-2">
+            <div class="bg-primary p-1.5 rounded-lg">
+              <span class="material-symbols-outlined text-white"
+                >sports_soccer</span
+              >
+            </div>
+            <h2 class="font-black text-xl">BBSA</h2>
+          </div>
+          <button
+            id="close-menu"
+            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-6 text-lg font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >About</a
+          >
+          <a
+            href="programs.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >Programs</a
+          >
+          <a
+            href="registration.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >Registration</a
+          >
+          <a
+            href="community.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >Community</a
+          >
+          <a
+            href="contact.html"
+            class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+            >Contact</a
+          >
+        </nav>
+        <div class="mt-auto">
+          <button
+            class="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg"
+          >
+            Join Now
+          </button>
+        </div>
+      </aside>
+
+      <header
+        class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 sm:h-20">
+            <div class="flex items-center gap-2 group cursor-pointer">
+              <div class="bg-primary p-1.5 rounded-lg">
+                <span class="material-symbols-outlined text-white text-2xl"
+                  >sports_soccer</span
+                >
+              </div>
+              <h2
+                class="text-charcoal dark:text-white text-xl font-extrabold tracking-tight"
+              >
+                BBSA
+              </h2>
+            </div>
+            <nav class="hidden md:flex flex-1 justify-center gap-8">
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="index.html"
+                >Home</a
+              >
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="about.html"
+                >About</a
+              >
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="programs.html"
+                >Programs</a
+              >
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="registration.html"
+                >Registration</a
+              >
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="community.html"
+                >Community</a
+              >
+              <a
+                class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+                href="contact.html"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-4">
+              <button
+                class="hidden sm:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-md active:scale-95"
+              >
+                Join Now
+              </button>
+              <button
+                id="open-menu"
+                class="md:hidden p-2 text-charcoal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              >
+                <span class="material-symbols-outlined text-3xl">menu</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <section class="relative w-full py-20 px-6 lg:px-20">
+          <div
+            class="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit border border-primary/20"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >workspace_premium</span
+                >
+                <span class="text-xs font-bold uppercase tracking-wider"
+                  >Player-First Development</span
+                >
+              </div>
+              <h2
+                class="text-5xl lg:text-7xl font-black leading-tight tracking-tight"
+              >
+                Elevate Your <span class="text-primary italic">Game</span>
+              </h2>
+              <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl">
+                Our comprehensive development pathways are designed to nurture
+                talent from the first kick to elite competition. Join Buckeye’s
+                premier non-profit soccer community.
+              </p>
+            </div>
+            <div class="relative">
+              <div class="aspect-video rounded-xl overflow-hidden shadow-2xl">
+                <img
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOBBsM3B08fpwqhuV1XkSJjsiNBiF6tRU7jbw3HUbzxhvAIYqA_XhXBmOpEsE-tmGArPLt3zCDTs_Lfve0Q2OfL5BXvUGoo880GEuWM6t7EI8XmwON30AYiuQQaQfLbRayKU8zeNAixX_hg1JtBF4kHygdTbjpYCZJPAt8_FBlp3RJnR3a2HNnPiAU7z_EJjF6EBHm8yxNwi_j3g3pHwXuwfCfeSCCJa5pKNoiRZ0Z0PLqb4LzY4qIWAlhvUpCnUHyyKgvNlHs9Xk"
+                  alt="Youth soccer training"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white dark:bg-black/20 py-24 px-6 lg:px-20">
+          <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-16 flex flex-col items-center gap-4">
+              <h2 class="text-3xl lg:text-4xl font-black tracking-tight">
+                Soccer Development Pathways
+              </h2>
+              <div class="h-1.5 w-24 bg-primary rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="group flex flex-col bg-background-light dark:bg-background-dark p-6 rounded-xl border border-gray-100 dark:border-white/5 hover:border-primary/40 transition-all shadow-sm"
+              >
+                <div
+                  class="relative w-full h-48 mb-6 overflow-hidden rounded-lg"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9GbpKcGVRRU8G7kOnCPZ_SCcTqYkTvDytsPem4XQgkBc-6H8DM3VaScw0MLubyF__FXybtuenUERuKW8q1g55Cg7sWMGUnevL3cpqdh97ClLF3ugB7re5-Q-6oxhIwLqEdfjOH9-_j9YsDEFqtg2X-iVGMrNnXIv62FFilenSIX1mVXewqYgxzc0M1SA9iN2YBS0B7T4Ju2UPny5ABNUnUzvSGVEbY8j6Za6Ypcj8jNJwr7JE3ahMr1WDD_yZeKAaIFWNGOtzFFQ"
+                    alt="Mini Blazers"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                  >
+                    U4 - U6
+                  </div>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Mini Blazers</h4>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow"
+                >
+                  Motor skill development and joy with the ball.
+                </p>
+                <button
+                  class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all"
+                >
+                  Details
+                </button>
+              </div>
+
+              <div
+                class="group flex flex-col bg-white dark:bg-background-dark p-6 rounded-xl border-2 border-primary/20 hover:border-primary/60 transition-all shadow-md ring-4 ring-primary/5"
+              >
+                <div
+                  class="relative w-full h-48 mb-6 overflow-hidden rounded-lg"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_cSe_GbzKZqC4GH46NIuoDwhvEmi9pAeImlHLoIrqZjpBDMiO-MgRzCAS8UVrMSYvDYH_H5MFNtos_mvNiSJheJ_lvjg6V_zhLxq0at3xRLWEjJXDStCBvIIIzcie84bR0X29wH9FIthwWzbhkFm53lSrCwNNzmZ_uVGXrIPcTKY9mtAmY-mknGsnqRECsLlFHXM3I-zydHr5L_uNNhqFFeBc_TUtwfO7912bYzoq3gkCenmx8YBvYUtMCxJkfM3cj6CyRIWpck"
+                    alt="Junior Academy"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                  >
+                    U7 - U10
+                  </div>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Junior Academy</h4>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow"
+                >
+                  Building solid technical foundations and teamwork.
+                </p>
+                <button
+                  class="w-full py-3 rounded-lg bg-primary text-white font-bold text-sm shadow-lg hover:brightness-110 transition-all"
+                >
+                  Details
+                </button>
+              </div>
+
+              <div
+                class="group flex flex-col bg-background-light dark:bg-background-dark p-6 rounded-xl border border-gray-100 dark:border-white/5 hover:border-primary/40 transition-all shadow-sm"
+              >
+                <div
+                  class="relative w-full h-48 mb-6 overflow-hidden rounded-lg"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6T7VtuCHK4J3btUxULjBQKJOt64E92ZNWyhw-UUx5v6Fzrp9nw7C_ImE5yboas0FgKQ-rWn_kJefFuD-bubML-dYSporamw0IaMV-GjPv2pUzs4QgeEwAdnveqsy9qxzAjkvpJsQGx9C8ibd2MAzSJgUeMaCLg-Lh4Q-FJr2N1Qjx0QLWi7ht9V1unLh74Tawa_cwKyh-6XXVIyrIiFMUV3VvPEIliRiKyQtHP_LLTkHLVKj0HvY9V5lGaD25FSUBzk2tyy3n16E"
+                    alt="Elite Select"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                  >
+                    U11+
+                  </div>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Elite Select</h4>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow"
+                >
+                  Competitive environment and tactical growth.
+                </p>
+                <button
+                  class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all"
+                >
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-24 px-6 lg:px-20 bg-primary/5">
+          <div class="max-w-[1280px] mx-auto">
+            <h3 class="text-2xl font-black mb-12 text-center">
+              Annual Season Calendar
+            </h3>
+            <div class="grid sm:grid-cols-4 gap-4">
+              <div
+                class="p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm border-t-4 border-primary"
+              >
+                <p class="font-bold text-primary mb-2">Fall Season</p>
+                <p class="text-xs text-gray-500">Aug - Nov</p>
+              </div>
+              <div
+                class="p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm border-t-4 border-gray-300"
+              >
+                <p class="font-bold mb-2">Winter Indoor</p>
+                <p class="text-xs text-gray-500">Dec - Feb</p>
+              </div>
+              <div
+                class="p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm border-t-4 border-primary"
+              >
+                <p class="font-bold text-primary mb-2">Spring Season</p>
+                <p class="text-xs text-gray-500">Mar - May</p>
+              </div>
+              <div
+                class="p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm border-t-4 border-gray-300"
+              >
+                <p class="font-bold mb-2">Summer Camps</p>
+                <p class="text-xs text-gray-500">June - July</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="py-20 px-6 lg:px-20 bg-background-light dark:bg-background-dark"
+        >
+          <div
+            class="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-12 items-center"
+          >
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="aspect-square bg-white dark:bg-white/5 p-8 flex flex-col items-center justify-center text-center rounded-xl shadow-sm border border-gray-100"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-4"
+                  >verified_user</span
+                >
+                <h5 class="text-sm font-bold uppercase tracking-wide">
+                  SafeSport Certified
+                </h5>
+              </div>
+              <div
+                class="aspect-square bg-white dark:bg-white/5 p-8 flex flex-col items-center justify-center text-center rounded-xl shadow-sm border border-gray-100"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-4"
+                  >school</span
+                >
+                <h5 class="text-sm font-bold uppercase tracking-wide">
+                  USSF Licensed
+                </h5>
+              </div>
+            </div>
+            <div class="flex flex-col gap-6">
+              <h2
+                class="text-3xl lg:text-4xl font-black tracking-tight leading-tight"
+              >
+                Professional Coaching &
+                <span class="text-primary">Safety Standards</span>
+              </h2>
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                As a community-centered nonprofit, your child’s safety and
+                growth are our primary objectives.
+              </p>
+
+              <div
+                class="mt-4 p-6 bg-primary/10 rounded-xl border border-primary/20"
+              >
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >volunteer_activism</span
+                  >
+                  <p class="font-bold">Financial Assistance Available</p>
+                </div>
+                <p class="text-xs text-gray-600 dark:text-gray-400">
+                  We believe every child deserves a chance to play. BBSA offers
+                  needs-based scholarships to cover up to 100% of registration
+                  fees.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block mt-3 text-xs font-black text-primary hover:underline"
+                  >Apply for Scholarship →</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="relative mx-6 lg:mx-20 my-24 bg-primary rounded-2xl overflow-hidden shadow-2xl shadow-primary/30"
+        >
+          <div class="relative px-8 py-16 text-center text-white z-10">
+            <h2 class="text-3xl lg:text-5xl font-black mb-6 tracking-tight">
+              Ready to join the Blazer family?
+            </h2>
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <button
+                class="px-8 py-4 bg-white text-primary font-black rounded-lg hover:scale-105 transition-transform"
+              >
+                Register for Trial
+              </button>
+              <button
+                class="px-8 py-4 border-2 border-white/40 text-white font-bold rounded-lg hover:bg-white/10 transition-all"
+              >
+                Download Schedule
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="bg-primary text-white border-t border-red-700 pt-20 pb-10 px-4"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+              <div class="flex items-center gap-2 mb-6">
+                <div class="bg-white p-1.5 rounded-lg">
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >sports_soccer</span
+                  >
+                </div>
+                <h2 class="text-white text-xl font-extrabold tracking-tight">
+                  BBSA
+                </h2>
+              </div>
+              <p class="text-red-100 text-sm leading-relaxed mb-6">
+                Empowering young athletes through excellence, integrity, and
+                community impact.
+              </p>
+              <div class="flex gap-4">
+                <a
+                  class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >social_leaderboard</span
+                  >
+                </a>
+                <a
+                  class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >alternate_email</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h5
+                class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+              >
+                Programs
+              </h5>
+              <ul class="space-y-4 text-sm text-red-50">
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Junior Blazers</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Development League</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Elite Academy</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Clinics</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h5
+                class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+              >
+                Organization
+              </h5>
+              <ul class="space-y-4 text-sm text-red-50">
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Coaches</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline underline-offset-4" href="#"
+                    >Scholarships</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h5
+                class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+              >
+                Contact
+              </h5>
+              <ul class="space-y-4 text-sm text-red-50">
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-white text-xl"
+                    >location_on</span
+                  >
+                  <span>123 Soccer Way, Buckeye District, OH 43210</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-white text-xl"
+                    >mail</span
+                  >
+                  <span>hello@bbsa.org</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="border-t border-red-500/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <p class="text-red-200 text-xs">
+              © 2026 Buckeye Blazers Soccer Academy. Registered 501(c)(3).
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+      <script>
+        // Initialize Carousel
+        new Splide(".splide", {
+          type: "loop",
+          autoplay: true,
+          interval: 5000,
+          pauseOnHover: false,
+          arrows: false,
+          classes: { pagination: "splide__pagination !bottom-8" },
+        }).mount();
+
+        // Mobile Menu Logic
+        const openBtn = document.getElementById("open-menu");
+        const closeBtn = document.getElementById("close-menu");
+        const sideMenu = document.getElementById("side-menu");
+        const overlay = document.getElementById("menu-overlay");
+
+        function toggleMenu() {
+          const isOpen = !sideMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            sideMenu.classList.add("translate-x-full");
+            overlay.classList.add("hidden");
+            overlay.classList.remove("opacity-100");
+            document.body.classList.remove("mobile-menu-open");
+          } else {
+            sideMenu.classList.remove("translate-x-full");
+            overlay.classList.remove("hidden");
+            setTimeout(() => overlay.classList.add("opacity-100"), 10);
+            document.body.classList.add("mobile-menu-open");
+          }
+        }
+
+        openBtn.addEventListener("click", toggleMenu);
+        closeBtn.addEventListener("click", toggleMenu);
+        overlay.addEventListener("click", toggleMenu);
+
+        // Scroll Reveal Animation (Intersection Observer)
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+      </script>
+    </div>
+  </body>
+</html>

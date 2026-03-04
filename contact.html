@@ -1,0 +1,426 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact BBSA | Buckeye Blazers Soccer Academy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec1313",
+              "background-light": "#fcf8f8",
+              "background-dark": "#1a0a0a",
+              charcoal: "#1b0d0d",
+            },
+            fontFamily: {
+              sans: ["Lexend", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .mobile-menu-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-charcoal dark:text-white transition-colors duration-200 overflow-x-hidden"
+  >
+    <div
+      id="menu-overlay"
+      class="fixed inset-0 bg-black/60 z-[60] hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"
+    ></div>
+    <aside
+      id="side-menu"
+      class="fixed top-0 right-0 w-[80%] max-w-sm h-full bg-white dark:bg-background-dark z-[70] translate-x-full shadow-2xl p-6 flex flex-col transition-transform duration-300"
+    >
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-2">
+          <div class="bg-primary p-1.5 rounded-lg text-white">
+            <span class="material-symbols-outlined">sports_soccer</span>
+          </div>
+          <h2 class="font-black text-xl">BBSA</h2>
+        </div>
+        <button
+          id="close-menu"
+          class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-lg font-semibold">
+        <a
+          href="index.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >About</a
+        >
+        <a
+          href="programs.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Programs</a
+        >
+        <a
+          href="contact.html"
+          class="text-primary border-b border-primary/20 pb-2"
+          >Contact</a
+        >
+      </nav>
+      <div class="mt-auto">
+        <button
+          class="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg"
+        >
+          Donate Now
+        </button>
+      </div>
+    </aside>
+
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <div class="bg-primary p-1.5 rounded-lg text-white">
+            <span class="material-symbols-outlined">sports_soccer</span>
+          </div>
+          <h2 class="text-xl font-extrabold tracking-tight">BBSA</h2>
+        </div>
+        <nav class="hidden md:flex gap-8">
+          <a
+            class="text-sm font-semibold hover:text-primary transition-colors"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-sm font-semibold hover:text-primary transition-colors"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-sm font-semibold hover:text-primary transition-colors"
+            href="programs.html"
+            >Programs</a
+          >
+          <a class="text-sm font-bold text-primary" href="contact.html"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="hidden sm:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md active:scale-95 transition-all"
+          >
+            Join Now
+          </button>
+          <button id="open-menu" class="md:hidden p-2">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 lg:py-20">
+      <section class="mb-16 fade-in-up" id="hero">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4"
+        >
+          <span class="material-symbols-outlined text-sm">handshake</span> Join
+          Our Community
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">
+          Get in Touch
+        </h1>
+        <p
+          class="text-lg text-charcoal/70 dark:text-white/70 max-w-2xl leading-relaxed"
+        >
+          Have questions about our youth soccer programs in Columbus? We're here
+          to help you join the Buckeye Blazers community. Our team is ready to
+          assist with registration and training schedules.
+        </p>
+      </section>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div
+          class="bg-white dark:bg-[#2d1a1a] p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl fade-in-up"
+        >
+          <h3 class="text-2xl font-bold mb-8">Send a Message</h3>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-bold">Parent Name</label>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  class="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-background-dark focus:ring-primary focus:border-primary p-3"
+                />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold">Email Address</label>
+                <input
+                  type="email"
+                  placeholder="email@example.com"
+                  class="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-background-dark focus:ring-primary focus:border-primary p-3"
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold">Athlete Name (Optional)</label>
+              <input
+                type="text"
+                placeholder="Athlete's Name"
+                class="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-background-dark focus:ring-primary focus:border-primary p-3"
+              />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold">Subject</label>
+              <select
+                class="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-background-dark focus:ring-primary focus:border-primary p-3"
+              >
+                <option>Registration Inquiry</option>
+                <option>Training Schedule</option>
+                <option>Scholarships</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold">Your Message</label>
+              <textarea
+                rows="4"
+                placeholder="How can we help you?"
+                class="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-background-dark focus:ring-primary focus:border-primary p-3 resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary text-white font-black py-4 rounded-xl shadow-lg shadow-primary/30 hover:bg-red-700 transition-all flex items-center justify-center gap-2"
+            >
+              <span class="material-symbols-outlined">send</span> Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="flex flex-col gap-8 fade-in-up">
+          <div
+            class="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 bg-zinc-200"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5S0KhnZtAoHgwQFx6gD11LhruJCVkFMIbLvMuvQHIxGzHCgUCtNhjAWczQ5owVc3vX8p00ckJN5a7VmW4QUm_5k0-Ctr9WltMifvwGCEpqi0CEHgJrU0Hr2_9A2HqRBqwvggW6pZeqHe9s_Jdnf9a_l9bMpzH6vb3ryVxYHZ6RXBHEcltB_oeQfF95cb9C6cAgZPHzjkbcq3LdhiTnaV8O02lnsjIMuESLqZWz9qmfW58rlcv6KC0tRzjk4sjWTUTR6wyxp3g6E"
+              class="w-full h-full object-cover grayscale opacity-60"
+              alt="Map Location"
+            />
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center"
+            >
+              <div
+                class="bg-primary text-white p-3 rounded-full shadow-2xl animate-bounce"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >location_on</span
+                >
+              </div>
+              <div
+                class="mt-2 bg-white dark:bg-charcoal px-4 py-2 rounded-lg shadow-xl text-sm font-black border border-primary/20"
+              >
+                BBSA Training Grounds
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-[#2d1a1a] p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm"
+          >
+            <h4
+              class="text-xl font-bold mb-4 flex items-center gap-2 text-primary"
+            >
+              <span class="material-symbols-outlined">sports_soccer</span>
+              Training Facility
+            </h4>
+            <p class="text-charcoal/70 dark:text-white/70 mb-6">
+              Central Ohio Youth Sports Complex. Featuring 8 professional-grade
+              turf fields and night lighting.
+            </p>
+            <div
+              class="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-gray-800"
+            >
+              <div class="text-sm font-medium">
+                4500 Soccer Way<br />Columbus, OH 43215
+              </div>
+              <a
+                href="#"
+                class="text-primary font-bold flex items-center gap-1 hover:underline"
+                >Get Directions
+                <span class="material-symbols-outlined text-sm"
+                  >open_in_new</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="p-8 rounded-2xl bg-primary/5 border border-primary/10 text-center hover:scale-105 transition-all group fade-in-up"
+        >
+          <div
+            class="size-14 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform shadow-lg"
+          >
+            <span class="material-symbols-outlined text-2xl">mail</span>
+          </div>
+          <h4 class="font-bold mb-2">Email Us</h4>
+          <a
+            href="mailto:info@buckeyeblazers.org"
+            class="text-primary font-black"
+            >info@buckeyeblazers.org</a
+          >
+        </div>
+        <div
+          class="p-8 rounded-2xl bg-primary/5 border border-primary/10 text-center hover:scale-105 transition-all group fade-in-up"
+        >
+          <div
+            class="size-14 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform shadow-lg"
+          >
+            <span class="material-symbols-outlined text-2xl">call</span>
+          </div>
+          <h4 class="font-bold mb-2">Call Us</h4>
+          <a href="tel:6145550123" class="text-primary font-black"
+            >(614) 555-0123</a
+          >
+        </div>
+        <div
+          class="p-8 rounded-2xl bg-primary/5 border border-primary/10 text-center hover:scale-105 transition-all group fade-in-up"
+        >
+          <div
+            class="size-14 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform shadow-lg"
+          >
+            <span class="material-symbols-outlined text-2xl">share</span>
+          </div>
+          <h4 class="font-bold mb-2">Follow Us</h4>
+          <div class="flex justify-center gap-4 text-primary font-black">
+            @BuckeyeBlazers
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-white mt-20 pt-20 pb-10 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="col-span-2">
+            <h2 class="text-2xl font-black mb-6">BBSA</h2>
+            <p class="text-red-100 text-sm max-w-sm">
+              Developing Ohio's youth through technical excellence and character
+              growth. Registered 501(c)(3) nonprofit since 2009.
+            </p>
+          </div>
+          <div>
+            <h5
+              class="font-bold mb-6 text-red-200 uppercase text-xs tracking-widest"
+            >
+              Programs
+            </h5>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#" class="hover:underline">Elite Academy</a></li>
+              <li><a href="#" class="hover:underline">Junior Blazers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5
+              class="font-bold mb-6 text-red-200 uppercase text-xs tracking-widest"
+            >
+              Connect
+            </h5>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#" class="hover:underline">Instagram</a></li>
+              <li><a href="#" class="hover:underline">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-red-500/30 pt-8 text-xs text-red-200 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p>© 2026 Buckeye Blazers Soccer Academy. All Rights Reserved.</p>
+          <div class="flex gap-6">
+            <a href="#">Privacy Policy</a><a href="#">Safety</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu
+      const openBtn = document.getElementById("open-menu");
+      const closeBtn = document.getElementById("close-menu");
+      const sideMenu = document.getElementById("side-menu");
+      const overlay = document.getElementById("menu-overlay");
+
+      function toggleMenu() {
+        const isOpen = sideMenu.classList.contains("translate-x-full");
+        if (isOpen) {
+          sideMenu.classList.remove("translate-x-full");
+          overlay.classList.remove("hidden");
+          setTimeout(() => overlay.classList.add("opacity-100"), 10);
+          document.body.classList.add("mobile-menu-open");
+        } else {
+          sideMenu.classList.add("translate-x-full");
+          overlay.classList.remove("opacity-100");
+          setTimeout(() => overlay.classList.add("hidden"), 300);
+          document.body.classList.remove("mobile-menu-open");
+        }
+      }
+
+      openBtn.onclick = toggleMenu;
+      closeBtn.onclick = toggleMenu;
+      overlay.onclick = toggleMenu;
+
+      // Intersection Observer for animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".fade-in-up")
+        .forEach((el) => observer.observe(el));
+
+      // Initial Trigger for Hero
+      window.addEventListener("load", () => {
+        document.getElementById("hero").classList.add("visible");
+      });
+    </script>
+  </body>
+</html>

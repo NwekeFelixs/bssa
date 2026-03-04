@@ -1,0 +1,767 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BBSA | Buckeye Blazers Soccer Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec1313",
+              charcoal: "#333333",
+              "background-light": "#f8f6f6",
+              "background-dark": "#1a0a0a",
+            },
+            fontFamily: { display: ["Lexend", "sans-serif"] },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Mobile Menu Transitions */
+      #side-menu {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-menu-open {
+        overflow: hidden;
+      }
+
+      /* Animation Classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Carousel Overlay Gradient */
+      .carousel-overlay {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+      }
+
+      /* Splide Customization */
+      .splide__pagination__page.is-active {
+        background: #ec1313 !important;
+        transform: scale(1.4);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-charcoal dark:text-gray-100 min-h-screen"
+  >
+    <div
+      id="menu-overlay"
+      class="fixed inset-0 bg-black/60 z-[60] hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"
+    ></div>
+    <aside
+      id="side-menu"
+      class="fixed top-0 right-0 w-[80%] max-w-sm h-full bg-white dark:bg-background-dark z-[70] translate-x-full shadow-2xl p-6 flex flex-col"
+    >
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-2">
+          <div class="bg-primary p-1.5 rounded-lg">
+            <span class="material-symbols-outlined text-white"
+              >sports_soccer</span
+            >
+          </div>
+          <h2 class="font-black text-xl">BBSA</h2>
+        </div>
+        <button
+          id="close-menu"
+          class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-lg font-semibold">
+        <a
+          href="index.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >About</a
+        >
+        <a
+          href="programs.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Programs</a
+        >
+        <a
+          href="registration.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Registration</a
+        >
+        <a
+          href="community.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Community</a
+        >
+        <a
+          href="contact.html"
+          class="hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 pb-2"
+          >Contact</a
+        >
+      </nav>
+      <div class="mt-auto">
+        <button
+          class="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg"
+        >
+          Join Now
+        </button>
+      </div>
+    </aside>
+
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <div class="bg-primary p-1.5 rounded-lg">
+              <span class="material-symbols-outlined text-white text-2xl"
+                >sports_soccer</span
+              >
+            </div>
+            <h2
+              class="text-charcoal dark:text-white text-xl font-extrabold tracking-tight"
+            >
+              BBSA
+            </h2>
+          </div>
+          <nav class="hidden md:flex flex-1 justify-center gap-8">
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="about.html"
+              >About</a
+            >
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="programs.html"
+              >Programs</a
+            >
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="registration.html"
+              >Registration</a
+            >
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="community.html"
+              >Community</a
+            >
+            <a
+              class="text-charcoal dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors"
+              href="contact.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="hidden sm:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-md active:scale-95"
+            >
+              Join Now
+            </button>
+            <button
+              id="open-menu"
+              class="md:hidden p-2 text-charcoal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+            >
+              <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="splide relative w-full h-[600px] md:h-[700px]"
+        aria-label="Hero Carousel"
+      >
+        <div class="splide__track h-full">
+          <ul class="splide__list h-full">
+            <li class="splide__slide relative h-full">
+              <img
+                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="Soccer Action"
+              />
+              <div
+                class="absolute inset-0 carousel-overlay flex items-center justify-center"
+              >
+                <div class="max-w-4xl px-4 text-center">
+                  <h1
+                    class="text-white text-5xl md:text-7xl font-black mb-6 leading-tight"
+                  >
+                    Building Champions
+                    <span class="text-primary">On and Off</span> the Pitch
+                  </h1>
+                  <p
+                    class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+                  >
+                    Dedicated to fostering excellence, integrity, and community
+                    through professional youth soccer training.
+                  </p>
+                  <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                      class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-xl text-lg font-extrabold transition-all hover:-translate-y-1"
+                    >
+                      Register Now
+                    </button>
+                    <button
+                      class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl text-lg font-bold"
+                    >
+                      View Programs
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide relative h-full">
+              <img
+                src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=2000"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="Soccer Training"
+              />
+              <div
+                class="absolute inset-0 carousel-overlay flex items-center justify-center"
+              >
+                <div class="max-w-4xl px-4 text-center">
+                  <h2
+                    class="text-white text-5xl md:text-7xl font-black mb-6 leading-tight"
+                  >
+                    Professional <span class="text-primary">Mentorship</span>
+                  </h2>
+                  <p
+                    class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+                  >
+                    High-level coaching for every child, regardless of
+                    background or experience.
+                  </p>
+                  <button
+                    class="bg-primary text-white px-10 py-4 rounded-xl text-lg font-extrabold"
+                  >
+                    Meet Our Coaches
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="py-20 px-4 max-w-7xl mx-auto reveal">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h2
+              class="text-charcoal dark:text-white text-4xl font-black tracking-tight leading-none"
+            >
+              Our Vision & Mission
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+              We believe that sports are a catalyst for positive life change.
+              Buckeye Blazers Soccer Academy is committed to creating an
+              environment where every child can experience high-level
+              mentorship.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mt-8">
+              <div
+                class="flex-1 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-4"
+                  >visibility</span
+                >
+                <h3 class="font-bold text-xl mb-2">Our Vision</h3>
+                <p class="text-gray-500 text-sm">
+                  To be the premier soccer academy fostering elite talent and
+                  character in the Buckeye region.
+                </p>
+              </div>
+              <div
+                class="flex-1 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark/50 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-4"
+                  >track_changes</span
+                >
+                <h3 class="font-bold text-xl mb-2">Our Mission</h3>
+                <p class="text-gray-500 text-sm">
+                  To provide accessible, high-quality programs that prioritize
+                  player welfare and athletic growth.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="aspect-video rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                alt="Training"
+                class="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&q=80&w=1000"
+              />
+            </div>
+            <div
+              class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl hidden md:block shadow-xl"
+            >
+              <p class="text-4xl font-black italic">500+</p>
+              <p class="text-xs font-bold uppercase tracking-widest opacity-80">
+                Players Enrolled
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-gray-100 dark:bg-background-dark/30 py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-charcoal dark:text-white text-4xl font-black mb-4">
+              Our Core Values
+            </h2>
+            <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div
+              class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-center group reveal"
+            >
+              <div
+                class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >trending_up</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-3">Development First</h4>
+              <p class="text-gray-500 text-sm">
+                We prioritize skill growth over short-term winning results.
+              </p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-center group reveal"
+            >
+              <div
+                class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >verified_user</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-3">Integrity</h4>
+              <p class="text-gray-500 text-sm">
+                Honesty and sportsmanship are the cornerstones of every match.
+              </p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-center group reveal"
+            >
+              <div
+                class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >groups</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-3">Inclusion</h4>
+              <p class="text-gray-500 text-sm">
+                A welcoming environment where every player belongs.
+              </p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-center group reveal"
+            >
+              <div
+                class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >health_and_safety</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-3">Player Welfare</h4>
+              <p class="text-gray-500 text-sm">
+                Athlete safety and mental health are our top priorities.
+              </p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-center group reveal"
+            >
+              <div
+                class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >favorite</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-3">Community</h4>
+              <p class="text-gray-500 text-sm">
+                Dedicated to giving back to the local Buckeye neighborhood.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 px-4 max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row items-end justify-between gap-6 mb-12 reveal"
+        >
+          <div class="max-w-2xl">
+            <h2
+              class="text-charcoal dark:text-white text-4xl font-black tracking-tight mb-4"
+            >
+              Elite Training Programs
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">
+              Tailored developmental paths for every stage of a young athlete's
+              journey.
+            </p>
+          </div>
+          <a
+            class="text-primary font-bold flex items-center gap-2 group"
+            href="#"
+          >
+            View all programs
+            <span
+              class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="group cursor-pointer reveal">
+            <div
+              class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&q=80&w=800"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="Juniors"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+              >
+                <span
+                  class="bg-primary text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest"
+                  >Ages 5-8</span
+                >
+              </div>
+            </div>
+            <h3 class="text-2xl font-black mb-2">Blazer Juniors</h3>
+            <p class="text-gray-500 text-sm">
+              Foundational skills and teamwork through playful engagement.
+            </p>
+          </div>
+          <div class="group cursor-pointer reveal">
+            <div
+              class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&q=80&w=800"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="Dev"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+              >
+                <span
+                  class="bg-primary text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest"
+                  >Ages 9-13</span
+                >
+              </div>
+            </div>
+            <h3 class="text-2xl font-black mb-2">Developmental League</h3>
+            <p class="text-gray-500 text-sm">
+              Focus on tactical awareness and intermediate proficiency.
+            </p>
+          </div>
+          <div class="group cursor-pointer reveal">
+            <div
+              class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1521233013429-2f2edc9b59f8?auto=format&fit=crop&q=80&w=800"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="Elite"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+              >
+                <span
+                  class="bg-primary text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest"
+                  >Ages 14-18</span
+                >
+              </div>
+            </div>
+            <h3 class="text-2xl font-black mb-2">Elite Academy</h3>
+            <p class="text-gray-500 text-sm">
+              Competitive pathway preparing athletes for high school and
+              college.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 px-4 reveal">
+        <div
+          class="max-w-5xl mx-auto bg-charcoal dark:bg-background-dark/80 rounded-[2rem] p-12 text-center relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full -mr-32 -mt-32 blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full -ml-32 -mb-32 blur-3xl"
+          ></div>
+          <h2 class="text-white text-4xl font-black mb-6 relative z-10">
+            Join the BBSA Community
+          </h2>
+          <p
+            class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto relative z-10"
+          >
+            We are a family. Sign up for our newsletter to stay updated on
+            tryouts and events.
+          </p>
+          <form
+            class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-10"
+          >
+            <input
+              class="flex-1 px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter your email"
+              type="email"
+            />
+            <button
+              class="bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg active:scale-95"
+              type="submit"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-primary text-white border-t border-red-700 pt-20 pb-10 px-4"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="bg-white p-1.5 rounded-lg">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >sports_soccer</span
+                >
+              </div>
+              <h2 class="text-white text-xl font-extrabold tracking-tight">
+                BBSA
+              </h2>
+            </div>
+            <p class="text-red-100 text-sm leading-relaxed mb-6">
+              Empowering young athletes through excellence, integrity, and
+              community impact.
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >social_leaderboard</span
+                >
+              </a>
+              <a
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >alternate_email</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h5
+              class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+            >
+              Programs
+            </h5>
+            <ul class="space-y-4 text-sm text-red-50">
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Junior Blazers</a
+                >
+              </li>
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Development League</a
+                >
+              </li>
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Elite Academy</a
+                >
+              </li>
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Clinics</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+            >
+              Organization
+            </h5>
+            <ul class="space-y-4 text-sm text-red-50">
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Coaches</a
+                >
+              </li>
+              <li>
+                <a class="hover:underline underline-offset-4" href="#"
+                  >Scholarships</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="font-bold mb-6 uppercase text-xs tracking-widest text-red-200"
+            >
+              Contact
+            </h5>
+            <ul class="space-y-4 text-sm text-red-50">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-white text-xl"
+                  >location_on</span
+                >
+                <span>123 Soccer Way, Buckeye District, OH 43210</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-white text-xl"
+                  >mail</span
+                >
+                <span>hello@bbsa.org</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-red-500/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-red-200 text-xs">
+            © 2026 Buckeye Blazers Soccer Academy. Registered 501(c)(3).
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      // Initialize Carousel
+      new Splide(".splide", {
+        type: "loop",
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: false,
+        arrows: false,
+        classes: { pagination: "splide__pagination !bottom-8" },
+      }).mount();
+
+      // Mobile Menu Logic
+      const openBtn = document.getElementById("open-menu");
+      const closeBtn = document.getElementById("close-menu");
+      const sideMenu = document.getElementById("side-menu");
+      const overlay = document.getElementById("menu-overlay");
+
+      function toggleMenu() {
+        const isOpen = !sideMenu.classList.contains("translate-x-full");
+        if (isOpen) {
+          sideMenu.classList.add("translate-x-full");
+          overlay.classList.add("hidden");
+          overlay.classList.remove("opacity-100");
+          document.body.classList.remove("mobile-menu-open");
+        } else {
+          sideMenu.classList.remove("translate-x-full");
+          overlay.classList.remove("hidden");
+          setTimeout(() => overlay.classList.add("opacity-100"), 10);
+          document.body.classList.add("mobile-menu-open");
+        }
+      }
+
+      openBtn.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", toggleMenu);
+
+      // Scroll Reveal Animation (Intersection Observer)
+      const observerOptions = { threshold: 0.15 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
