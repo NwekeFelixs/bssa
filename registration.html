@@ -67,7 +67,7 @@
       .form-input:focus,
       .form-select:focus {
         border-color: #ec1313;
-        ring-color: #ec1313;
+        outline-color: #ec1313;
       }
     </style>
   </head>
@@ -139,7 +139,7 @@
       </div>
     </aside>
 
-    <header
+   <header
       class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,6 +193,19 @@
               class="hidden sm:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-md active:scale-95"
             >
               Join Now
+            </button>
+
+            <button
+              id="theme-toggle"
+              class="p-2.5 rounded-lg text-charcoal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700"
+              aria-label="Toggle Dark Mode"
+            >
+              <span class="material-symbols-outlined hidden dark:block"
+                >light_mode</span
+              >
+              <span class="material-symbols-outlined block dark:hidden"
+                >dark_mode</span
+              >
             </button>
             <button
               id="open-menu"
@@ -793,6 +806,29 @@
     </div>
 
     <script>
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      // Check for saved theme or system preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.replace("light", "dark");
+      } else {
+        htmlElement.classList.replace("dark", "light");
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        if (htmlElement.classList.contains("dark")) {
+          htmlElement.classList.replace("dark", "light");
+          localStorage.setItem("theme", "light");
+        } else {
+          htmlElement.classList.replace("light", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
       // Reveal Observer
       const observerOptions = { threshold: 0.15 };
       const observer = new IntersectionObserver((entries) => {

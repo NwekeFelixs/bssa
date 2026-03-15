@@ -158,6 +158,19 @@
               >
                 Join Now
               </button>
+
+              <button
+                id="theme-toggle"
+                class="p-2.5 rounded-lg text-charcoal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700"
+                aria-label="Toggle Dark Mode"
+              >
+                <span class="material-symbols-outlined hidden dark:block"
+                  >light_mode</span
+                >
+                <span class="material-symbols-outlined block dark:hidden"
+                  >dark_mode</span
+                >
+              </button>
               <button
                 id="open-menu"
                 class="md:hidden p-2 text-charcoal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
@@ -533,7 +546,6 @@
         </section> -->
       </main>
 
-      <
       <footer
         class="bg-primary text-white border-t border-red-700 pt-20 pb-10 px-4"
       >
@@ -664,6 +676,29 @@
 
       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
       <script>
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme or system preference
+        if (
+          localStorage.getItem("theme") === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          htmlElement.classList.replace("light", "dark");
+        } else {
+          htmlElement.classList.replace("dark", "light");
+        }
+
+        themeToggleBtn.addEventListener("click", () => {
+          if (htmlElement.classList.contains("dark")) {
+            htmlElement.classList.replace("dark", "light");
+            localStorage.setItem("theme", "light");
+          } else {
+            htmlElement.classList.replace("light", "dark");
+            localStorage.setItem("theme", "dark");
+          }
+        });
         // Mobile Menu Logic
         const openBtn = document.getElementById("open-menu");
         const closeBtn = document.getElementById("close-menu");
